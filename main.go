@@ -21,11 +21,12 @@ func printf(format string, a ...interface{}) (n int, err error) {
 	var total int
 	for _, ch := range out {
 		n, err := fmt.Printf("%c", ch)
+		total += n
+
 		if err != nil {
 			return total, err
 		}
 
-		total += n
 		time.Sleep(time.Millisecond * time.Duration(delay))
 	}
 
