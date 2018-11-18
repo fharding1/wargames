@@ -38,6 +38,7 @@ func main() {
 
 	cur := make([]byte, len(target))
 	wg := new(sync.WaitGroup)
+	writeLock := new(sync.Mutex)
 
 	for i := 0; i < len(cur); i++ {
 		wg.Add(1)
@@ -45,7 +46,10 @@ func main() {
 			for cur[i] != target[i] {
 				time.Sleep(time.Millisecond * delay)
 				cur[i] = wordlist[rand.Intn(len(wordlist))]
+
+				writeLock.Lock()
 				fmt.Printf("%s\r", cur)
+				writeLock.Unlock()
 			}
 
 			wg.Done()
