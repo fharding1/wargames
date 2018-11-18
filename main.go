@@ -56,10 +56,8 @@ func main() {
 
 	fmt.Printf("%s\n\n", cur)
 
-	stdin := bufio.NewReader(os.Stdin)
-
 	printf("GREETINGS PROFESSOR FALKEN\n\n")
-	stdin.ReadLine()
+	bufio.NewReader(os.Stdin).ReadLine()
 	printf("\nA STRANGE GAME.\n")
 	printf("THE ONLY WINNING MOVE\n")
 	printf("IS NOT TO PLAY.\n")
