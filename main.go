@@ -26,7 +26,7 @@ func printf(format string, a ...interface{}) (n int, err error) {
 		}
 
 		total += n
-		time.Sleep(time.Millisecond * time.Duration(50+rand.Intn(25)))
+		time.Sleep(time.Millisecond * time.Duration(delay))
 	}
 
 	return total, nil
