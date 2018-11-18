@@ -22,7 +22,7 @@ func printf(format string, a ...interface{}) (n int, err error) {
 	for _, ch := range out {
 		n, err := fmt.Printf("%c", ch)
 		if err != nil {
-			return n, err
+			return total, err
 		}
 
 		total += n
