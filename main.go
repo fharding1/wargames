@@ -59,10 +59,13 @@ func main() {
 	wg.Wait()
 
 	fmt.Printf("%s\n\n", cur)
+	time.Sleep(time.Second * 2)
 
 	printf("GREETINGS PROFESSOR FALKEN\n\n")
 	bufio.NewReader(os.Stdin).ReadLine()
 	printf("\nA STRANGE GAME.\n")
 	printf("THE ONLY WINNING MOVE\n")
 	printf("IS NOT TO PLAY.\n")
+	time.Sleep(time.Second * 2)
+	printf("\nHOW ABOUT A NICE GAME OF CHESS?\n")
 }
