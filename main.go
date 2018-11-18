@@ -48,7 +48,7 @@ func main() {
 				cur[i] = wordlist[rand.Intn(len(wordlist))]
 
 				writeLock.Lock()
-				fmt.Printf("%s\r", cur)
+				fmt.Fprintf(os.Stderr, "%s\r", cur)
 				writeLock.Unlock()
 			}
 
@@ -58,7 +58,7 @@ func main() {
 
 	wg.Wait()
 
-	fmt.Printf("%s\n\n", cur)
+	fmt.Fprintf(os.Stderr, "%s\n\n", cur)
 	time.Sleep(time.Second * 2)
 
 	printf("GREETINGS PROFESSOR FALKEN\n\n")
